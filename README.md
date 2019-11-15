@@ -29,10 +29,26 @@ In this project you will create a login page and request a token from the server
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain what a token is used for.
+
+  A) A token is used to authenticate HTTP requests to the backend. Some requests require a token in order to verify that user's access level. If the user doesn't have the token, then they are denied the HTTP request.
+
 - [ ] What steps can you take in your web apps to keep your data secure?
+
+  A) Having an SSL certificate on the website help sending data from the client to the backend more secure.
+  Also, having protected/private routes help a ton so that only verified/authenticated users can access that information. Usually getting that token is by a login system that the authorized users would know the credentials/information to get.
+
 - [ ] Describe how web servers work.
+
+  A) A web server is a computer or program that stores code for a website and shares it across the world. It 'hosts' our website so to speak.
+  How they work is simple. Computers connect to the internet and can find out an ip address through a Domain name (It's a readable version for humans), they use that ip address to find the computer/web server that is hosting our website/code and gives it to us. It's that simple.
+
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
+  A) The CRUD acronym consists of: (C)reate, (R)ead, (U)pdate, (D)elete.
+  Create: We use the POST method,
+  Read: We use the GET method,
+  Update: We use the PUT method,
+  Delete: We use the DELETE method :)
 
 ## Project Set Up
 
@@ -53,9 +69,9 @@ Follow these steps to set up and work on your project:
 
 Follow these steps for completing your project:
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo).
+- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo).
 - [ ] Add your Project Manager as a Reviewer on the Pull-request
-- [ ] PM then will count the HW as done by  merging the branch back into master.
+- [ ] PM then will count the HW as done by merging the branch back into master.
 
 ## Minimum Viable Product
 
@@ -78,11 +94,11 @@ Build a login form to authenticate your users.
 
 ### API Documentation
 
-  * **[POST]** * to `/api/login`: returns a token to be added to the header of all other requests. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda School', password: 'i<3Lambd4' }`
-  * **[GET]** to `/api/colors`: returns the list of colors and their hex codes.
-  * **[POST]** to `/api/colors`: creates a new color object. Pass the color as the `body` of the request (the second argument passed to `axios.post`).
-  * **[PUT]** to `/api/colors/:id`: updates the color using the `id` passed as part of the URL. Send the color object with the updated information as the `body` of the request (the second argument passed to `axios.put`).
-  * **[DELETE]** to `/api/colors/123`: removes the color using the `id` passed as part of the URL (123 in example).
+- **[POST]** \* to `/api/login`: returns a token to be added to the header of all other requests. Pass in the following credentials as the `body` of the request: `{ username: 'Lambda School', password: 'i<3Lambd4' }`
+- **[GET]** to `/api/colors`: returns the list of colors and their hex codes.
+- **[POST]** to `/api/colors`: creates a new color object. Pass the color as the `body` of the request (the second argument passed to `axios.post`).
+- **[PUT]** to `/api/colors/:id`: updates the color using the `id` passed as part of the URL. Send the color object with the updated information as the `body` of the request (the second argument passed to `axios.put`).
+- **[DELETE]** to `/api/colors/123`: removes the color using the `id` passed as part of the URL (123 in example).
 
 ## STRETCH PROBLEMS
 
