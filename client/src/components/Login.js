@@ -7,7 +7,7 @@ import {
   makeStyles
 } from "@material-ui/core";
 
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import axios from "axios";
 
@@ -37,6 +37,7 @@ const initialFormData = {
 
 const Login = () => {
   const [credentials, setCredentials] = useState(initialFormData);
+  const history = useHistory();
   const classes = useStyles();
 
   // make a post request to retrieve a token from the api
@@ -49,6 +50,7 @@ const Login = () => {
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.payload);
+        history.push("/bubbles");
       })
       .catch(err => console.log(err));
   };
