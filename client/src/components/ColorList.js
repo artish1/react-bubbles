@@ -102,7 +102,7 @@ const ColorList = ({ colors, updateColors }) => {
           </div>
         </form>
       )}
-      <AddColorForm />
+      <AddColorForm updateList={updateColors} />
 
       <div className="spacer" />
       {/* stretch - build another form here to add a color */}

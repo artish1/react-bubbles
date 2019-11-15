@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
 //   id: -1
 // };
 
-const AddColorForm = () => {
+const AddColorForm = ({ updateList }) => {
   const [hex, setHex] = useState("#000000");
   const [color, setColor] = useState("black");
   const classes = useStyles();
@@ -45,6 +45,12 @@ const AddColorForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    axiosWithAuth()
+      .post("/api/colors", { code: { hex }, color })
+      .then(res => {
+        updateList(res.data);
+      })
+      .catch(err => console.log(err));
   };
   return (
     <Paper className={classes.root}>
