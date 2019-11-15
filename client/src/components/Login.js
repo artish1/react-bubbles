@@ -7,6 +7,10 @@ import {
   makeStyles
 } from "@material-ui/core";
 
+import { Redirect } from "react-router-dom";
+
+import axios from "axios";
+
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(3, 2),
@@ -40,7 +44,13 @@ const Login = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log("submitted");
+    axios
+      .post("http://localhost:5000/api/login", credentials)
+      .then(res => {
+        console.log(res);
+        localStorage.setItem("token", res.data.payload);
+      })
+      .catch(err => console.log(err));
   };
   const handleChange = e => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
